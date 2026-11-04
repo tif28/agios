@@ -1,65 +1,472 @@
 
-<!doctype html>
+doctype html>
+
 <html lang="fr">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agios : récupère les frais bancaires prélevés à tort</title>
-<meta name="description" content="Repère les frais bancaires abusifs sur ton relevé et envoie la réclamation prête à signer.">
-<meta property="og:title" content="Agios : récupère les frais bancaires prélevés à tort">
-<meta property="og:description" content="Commissions d'intervention, frais de rejet, options inutilisées : on les repère, tu les réclames.">
-<meta property="og:type" content="website">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description" content="Agios vous aide à répertorier vos frais bancaires et à préparer vos demandes d'explication.">
+
+<title>Agios — Comprends tes frais bancaires</title>
+
 <style>
-:root{--encre:#14213d;--accent:#e8590c;--fond:#faf7f2;--gris:#5c6370}
-*{box-sizing:border-box}
-body{margin:0;background:var(--fond);color:var(--encre);font:18px/1.55 Georgia,"Times New Roman",serif}
-main{max-width:560px;margin:0 auto;padding:28px 20px 60px}
-h1{font-size:34px;line-height:1.1;margin:8px 0 16px}
-h2{font-size:22px;margin:36px 0 10px}
-p{margin:0 0 14px}
-.petit{font:14px/1.5 system-ui,sans-serif;color:var(--gris)}
-.marque{font:700 14px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-ul{padding-left:20px}li{margin-bottom:8px}
-.btn{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font:700 19px system-ui,sans-serif;padding:18px;border-radius:12px;margin:22px 0 8px}
-.carte{background:#fff;border:2px solid var(--encre);border-radius:14px;padding:20px;margin:24px 0}
-.prix{font-size:40px;font-weight:700}
-details{border-bottom:1px solid #ddd;padding:12px 0}
-summary{font-weight:700;cursor:pointer}
-footer{margin-top:40px}footer a{color:var(--gris)}
+
+:root {
+
+  --ink:#14213d;
+
+  --accent:#e8590c;
+
+  --bg:#faf7f2;
+
+  --muted:#667085;
+
+}
+
+* { box-sizing:border-box }
+
+body {
+
+  margin:0;background:var(--bg);color:var(--ink);
+
+  font:16px/1.5 system-ui,sans-serif;
+
+}
+
+main { max-width:620px;margin:auto;padding:28px 20px 60px }
+
+.brand {
+
+  color:var(--accent);font-weight:800;
+
+  letter-spacing:3px;font-size:14px;
+
+}
+
+h1 { font-size:34px;line-height:1.15;margin:15px 0 }
+
+h2 { font-size:21px;margin:30px 0 12px }
+
+p { margin:8px 0 15px }
+
+.muted { color:var(--muted);font-size:13px }
+
+.card {
+
+  background:white;border:1px solid #e3ded6;
+
+  border-radius:15px;padding:20px;margin:20px 0;
+
+}
+
+label { display:block;font-weight:650;margin:12px 0 6px }
+
+input,select {
+
+  width:100%;padding:14px;border:1px solid #ccd0d7;
+
+  border-radius:9px;font:inherit;background:white;
+
+}
+
+button {
+
+  width:100%;padding:15px;border:0;border-radius:10px;
+
+  font:700 16px system-ui;cursor:pointer;margin-top:12px;
+
+}
+
+.primary { background:var(--accent);color:white }
+
+.secondary { background:#eee9e2;color:var(--ink) }
+
+.fee {
+
+  border-bottom:1px solid #eee;padding:12px 0;
+
+  display:flex;justify-content:space-between;gap:10px;
+
+}
+
+.total { font-size:30px;font-weight:800 }
+
+.result {
+
+  white-space:pre-wrap;background:#fff;
+
+  border:1px solid #ddd;border-radius:10px;
+
+  padding:15px;font-size:14px;
+
+}
+
+.hidden { display:none }
+
+footer { margin-top:40px;color:var(--muted);font-size:12px }
+
 </style>
+
 </head>
+
 <body>
+
 <main>
-<p class="marque">Agios</p>
-<h1>Récupère les frais bancaires prélevés à tort.</h1>
-<p>Commissions d'intervention, frais de rejet, options facturées sans usage : ils s'ajoutent par petites lignes illisibles. La plupart sont plafonnés par la loi, souvent négociables, et presque jamais contestés.</p>
-<a class="btn" href="https://buy.stripe.com/4gM3cnbrH6Cv7b0g2oa3u00">Commencer</a>
-<p class="petit">Accès anticipé, 29 € par mois, sans engagement, résiliable à tout moment.</p>
 
-<h2>Ce que tu obtiens</h2>
-<ul>
-<li><strong>Toutes les lignes de frais repérées</strong> sur ton relevé.</li>
-<li><strong>Ton total sur douze mois</strong>, comparé aux plafonds légaux.</li>
-<li><strong>Un courrier de réclamation prêt</strong>, adressé à la bonne agence.</li>
-</ul>
+  <div class="brand">AGIOS</div>
 
-<div class="carte">
-<p class="prix">29 € <span class="petit">par mois, soit moins d'1 € par jour</span></p>
-<p><strong>Satisfait ou remboursé 14 jours.</strong> Écris-nous à CONTACT_EMAIL_ICI : remboursement intégral sous 5 jours ouvrés, sans justification.</p>
-<a class="btn" href="https://buy.stripe.com/4gM3cnbrH6Cv7b0g2oa3u00">Commencer</a>
-<p class="petit">Sans engagement, résiliable à tout moment. Paiement sécurisé par Stripe.</p>
-</div>
+  <h1>Comprends tes frais bancaires.</h1>
 
-<h2>Questions fréquentes</h2>
-<details><summary>Est-ce que ça marche pour mon cas ?</summary><p>Si ton relevé contient des frais d'intervention, de rejet ou des options, oui. Particuliers comme petites structures.</p></details>
-<details><summary>Combien de temps ça me prend ?</summary><p>Quelques minutes : tu envoies ton relevé, tu reçois ton courrier.</p></details>
-<details><summary>Et si je veux arrêter ?</summary><p>Un simple email suffit, tu es remboursé dans les 14 premiers jours.</p></details>
-<details><summary>À quoi sert ce que je paie ?</summary><p>À l'analyse de ton relevé, au calcul de tes frais et à ton courrier de réclamation.</p></details>
+  <p>Répertorie les frais présents sur ton relevé, calcule leur montant et prépare une demande d'explication à ta banque.</p>
 
-<footer class="petit">
-<a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Confidentialité</a><br>
-RAISON_SOCIALE · SIRET · ADRESSE
-</footer>
+  <div class="card">
+
+    <h2>1. Ajouter un frais bancaire</h2>
+
+    <label for="type">Type de frais</label>
+
+    <select id="type">
+
+      <option>Commission d'intervention</option>
+
+      <option>Frais de rejet de prélèvement</option>
+
+      <option>Frais de rejet de chèque</option>
+
+      <option>Cotisation bancaire</option>
+
+      <option>Option ou service bancaire</option>
+
+      <option>Autre frais</option>
+
+    </select>
+
+    <label for="amount">Montant en euros</label>
+
+    <input id="amount" type="number" min="0.01"
+
+      max="100000" step="0.01" placeholder="Exemple : 8,50">
+
+    <label for="date">Date du prélèvement (facultatif)</label>
+
+    <input id="date" type="date">
+
+    <button class="primary" id="add">Ajouter ce frais</button>
+
+    <p class="muted">N'entre aucune donnée confidentielle ni aucun numéro de compte.</p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>2. Ton récapitulatif</h2>
+
+    <div id="fees">
+
+      <p class="muted">Aucun frais ajouté pour le moment.</p>
+
+    </div>
+
+    <p class="muted">Total des frais saisis</p>
+
+    <div class="total" id="total">0,00 €</div>
+
+    <button class="secondary" id="clear">Effacer les données</button>
+
+  </div>
+
+  <div class="card">
+
+    <h2>3. Préparer une réclamation</h2>
+
+    <label for="bank">Nom de ta banque</label>
+
+    <input id="bank" maxlength="100" placeholder="Exemple : Ma banque">
+
+    <label for="agency">Nom de ton agence (facultatif)</label>
+
+    <input id="agency" maxlength="100" placeholder="Exemple : Agence Centre">
+
+    <label for="customer">Ton nom</label>
+
+    <input id="customer" maxlength="100" placeholder="Prénom et nom">
+
+    <button class="primary" id="generate">Générer mon courrier</button>
+
+    <div id="output" class="hidden">
+
+      <h2>Ton courrier</h2>
+
+      <div class="result" id="letter"></div>
+
+      <button class="primary" id="download">Télécharger le courrier</button>
+
+      <button class="secondary" id="print">Imprimer ou enregistrer en PDF</button>
+
+    </div>
+
+  </div>
+
+  <footer>
+
+    Agios est un outil d'information et de préparation de courriers.
+
+    Les résultats sont indicatifs et ne constituent pas une expertise juridique.
+
+    Les frais saisis restent dans cette page et ne sont pas transmis à un serveur.
+
+    Vérifie les informations avant d'envoyer ton courrier.
+
+  </footer>
+
 </main>
+
+<script>
+
+const fees = [];
+
+const euro = value =>
+
+  value.toLocaleString("fr-FR", {
+
+    style:"currency",currency:"EUR"
+
+  });
+
+const $ = id => document.getElementById(id);
+
+function render() {
+
+  $("fees").innerHTML = "";
+
+  if (!fees.length) {
+
+    $("fees").textContent = "Aucun frais ajouté pour le moment.";
+
+  }
+
+  fees.forEach((fee,index) => {
+
+    const line = document.createElement("div");
+
+    line.className = "fee";
+
+    const description = document.createElement("span");
+
+    description.textContent =
+
+      fee.type + (fee.date ? " — " + fee.date : "");
+
+    const amount = document.createElement("strong");
+
+    amount.textContent = euro(fee.amount);
+
+    const remove = document.createElement("button");
+
+    remove.textContent = "×";
+
+    remove.style.width = "42px";
+
+    remove.style.margin = "0";
+
+    remove.setAttribute("aria-label","Supprimer ce frais");
+
+    remove.onclick = () => {
+
+      fees.splice(index,1);
+
+      render();
+
+    };
+
+    line.append(description,amount,remove);
+
+    $("fees").appendChild(line);
+
+  });
+
+  $("total").textContent =
+
+    euro(fees.reduce((sum,fee) => sum + fee.amount,0));
+
+  $("output").classList.add("hidden");
+
+}
+
+$("add").onclick = () => {
+
+  const amount = Number($("amount").value);
+
+  if (!Number.isFinite(amount) || amount <= 0 ||
+
+      amount > 100000) {
+
+    alert("Saisis un montant valide.");
+
+    return;
+
+  }
+
+  fees.push({
+
+    type:$("type").value,
+
+    amount,
+
+    date:$("date").value
+
+  });
+
+  $("amount").value = "";
+
+  $("date").value = "";
+
+  render();
+
+};
+
+$("clear").onclick = () => {
+
+  if (confirm("Effacer tous les frais saisis ?")) {
+
+    fees.length = 0;
+
+    render();
+
+  }
+
+};
+
+let letterText = "";
+
+$("generate").onclick = () => {
+
+  if (!fees.length) {
+
+    alert("Ajoute au moins un frais.");
+
+    return;
+
+  }
+
+  const bank = $("bank").value.trim();
+
+  const customer = $("customer").value.trim();
+
+  const agency = $("agency").value.trim();
+
+  if (!bank || !customer) {
+
+    alert("Indique ta banque et ton nom.");
+
+    return;
+
+  }
+
+  const total = fees.reduce(
+
+    (sum,fee) => sum + fee.amount,0
+
+  );
+
+  const details = fees.map(fee =>
+
+    "- " + fee.type + " : " + euro(fee.amount) +
+
+    (fee.date ? " (date : " + fee.date + ")" : "")
+
+  ).join("\n");
+
+  letterText =
+
+`Objet : Demande d'explication concernant des frais bancaires
+
+Madame, Monsieur,
+
+Je suis client(e) de votre établissement${agency ? ", agence " + agency : ""}.
+
+Après consultation de mon relevé bancaire, j'ai identifié les frais suivants :
+
+${details}
+
+Le montant total des frais recensés est de ${euro(total)}.
+
+Je vous remercie de bien vouloir m'apporter des explications sur l'origine et la justification contractuelle de ces prélèvements.
+
+Je vous remercie également de vérifier leur conformité avec les conditions tarifaires applicables et la réglementation en vigueur, et de m'indiquer si une régularisation est possible.
+
+Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.
+
+${customer}`;
+
+  $("letter").textContent = letterText;
+
+  $("output").classList.remove("hidden");
+
+};
+
+$("download").onclick = () => {
+
+  const blob = new Blob([letterText], {
+
+    type:"text/plain;charset=utf-8"
+
+  });
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+
+  link.href = url;
+
+  link.download = "courrier-agios.txt";
+
+  link.click();
+
+  URL.revokeObjectURL(url);
+
+};
+
+$("print").onclick = () => {
+
+  const w = window.open("","_blank");
+
+  if (!w) {
+
+    alert("Autorise les fenêtres contextuelles pour imprimer.");
+
+    return;
+
+  }
+
+  const pre = w.document.createElement("pre");
+
+  pre.style.whiteSpace = "pre-wrap";
+
+  pre.style.fontFamily = "Arial,sans-serif";
+
+  pre.style.fontSize = "14px";
+
+  pre.textContent = letterText;
+
+  w.document.body.appendChild(pre);
+
+  w.document.close();
+
+  w.focus();
+
+  w.print();
+
+};
+
+render();
+
+</script>
+
 </body>
+
 </html>
